@@ -4,12 +4,6 @@ sidebar_position: 1
 
 # Input Devices
 
-- Mouse
-- Keyboards
-- Gamepads
-- SpaceMouse
-- VRPN
-
 ## Overview
 
 macOS supports a wide range of [HID](https://en.wikipedia.org/wiki/Human_interface_device) input devices. They are typically connected using USB, Bluetooth, or network interface.
@@ -20,3 +14,10 @@ The [3Dconnexion SpaceMouse](https://3dconnexion.com/ca/) provides an effective 
 
 [VRPN (Virtual Reality Peripheral Network)](https://github.com/vrpn/vrpn/wiki) is a network based communication system for interfacing VR focused input devices like camera trackers, hand tracker, and motion capture systems.
 
+## Topics
+
+- Mouse
+- Keyboards
+- Gamepads
+- SpaceMouse
+- VRPN

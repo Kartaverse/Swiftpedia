@@ -6,15 +6,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 const sections = [
 
   {
-    title: 'Swift',
+    title: 'Swift Resources',
     links: [
-      { label: 'User Interface', href: '/docs/user-interface/' },
-      { label: 'File IO', href: '/docs/fileio/' },
-      { label: 'Networking', href: '/docs/networking/' },
-      { label: 'Screensavers', href: '/docs/screensavers/' },
-      { label: 'Metal GPU', href: '/docs/metal/' },
-      { label: 'Scripting', href: '/docs/scripting/' },
-      { label: 'Input Devices', href: '/docs/input-devices/' },
+      { label: 'Wiki Docs', href: '/docs/xcode/' },
+      { label: 'Example Projects', href: '/docs/examples/' },
     ]
   }
 ];
