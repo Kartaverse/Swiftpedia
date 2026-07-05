@@ -8,7 +8,7 @@ const sections = [
   {
     title: 'Swift Resources',
     links: [
-      { label: 'Wiki Docs', href: '/docs/xcode/' },
+      { label: 'Swift Wiki', href: '/docs/xcode/' },
       { label: 'Example Projects', href: '/docs/examples/' },
     ]
   }
