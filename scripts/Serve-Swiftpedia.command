@@ -5,4 +5,4 @@ cd "$PROJECT_ROOT/"
 
 # Open the webserver
 npm install
-npm start
+npm run start -- --host 0.0.0.0
