@@ -1,0 +1,8 @@
+#!/usr/bin/env zsh
+
+PROJECT_ROOT="$HOME/Documents/Git/Swiftpedia"
+cd "$PROJECT_ROOT/"
+
+# Open the webserver
+npm install
+npm start

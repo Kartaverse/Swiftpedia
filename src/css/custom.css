@@ -1,0 +1,460 @@
+/* ============================================================
+   Docusaurus Theme — Adapted from MediaWiki Monobook
+   ============================================================ */
+
+/* ---- Infima Base Variables ---- */
+:root {
+  --ifm-color-primary: #002bb8;
+  --ifm-color-primary-dark: #0027a6;
+  --ifm-color-primary-darker: #002494;
+  --ifm-color-primary-darkest: #001e7a;
+  --ifm-color-primary-light: #0030ca;
+  --ifm-color-primary-lighter: #0033dc;
+  --ifm-color-primary-lightest: #1a47e6;
+
+  --ifm-link-color: #002bb8;
+  --ifm-link-decoration: none;
+  --ifm-link-hover-color: #002bb8;
+  --ifm-link-hover-decoration: underline;
+
+  --ifm-code-font-size: 95%;
+  --ifm-font-family-base: sans-serif;
+  --ifm-heading-font-family: sans-serif;
+  --ifm-heading-font-weight: normal;
+  --ifm-heading-color: #000;
+
+  --ifm-background-color: #f9f9f9;
+  --ifm-navbar-background-color: #f9f9f9;
+  --ifm-footer-background-color: #fff;
+
+  --ifm-menu-color: #002bb8;
+  --ifm-menu-color-active: #002bb8;
+  --ifm-menu-color-background-active: transparent;
+
+  --ifm-toc-border-color: #aaa;
+  --ifm-table-border-color: #aaa;
+  --ifm-hr-border-color: #aaa;
+
+  --ifm-color-emphasis-300: #aaa;
+
+  /*  accent colour (golden yellow from Monobook tabs/footer) */
+  --vfx-accent: #fabd23;
+  --vfx-border: #aaa;
+  --vfx-bg-light: #f9f9f9;
+  --vfx-bg-white: #fff;
+  --vfx-link-visited: #5a3696;
+  --vfx-link-active: #faa700;
+  --vfx-external: #36b;
+}
+
+/* ---- Dark Mode ---- */
+[data-theme='dark'] {
+  --ifm-color-primary: #6b9aff;
+  --ifm-color-primary-dark: #4a82ff;
+  --ifm-color-primary-darker: #2970ff;
+  --ifm-color-primary-darkest: #0055e6;
+  --ifm-color-primary-light: #8cb2ff;
+  --ifm-color-primary-lighter: #adc9ff;
+  --ifm-color-primary-lightest: #cee0ff;
+
+  --ifm-link-color: #6b9aff;
+  --ifm-link-hover-color: #8cb2ff;
+  --ifm-background-color: #1b1b1d;
+  --ifm-navbar-background-color: #1b1b1d;
+  --ifm-footer-background-color: #1b1b1d;
+  --ifm-heading-color: #e3e3e3;
+  --ifm-menu-color: #6b9aff;
+  --ifm-menu-color-active: #8cb2ff;
+  --ifm-toc-border-color: #444;
+  --ifm-table-border-color: #444;
+  --ifm-hr-border-color: #444;
+  --ifm-color-emphasis-300: #444;
+
+  --vfx-border: #444;
+  --vfx-bg-light: #252527;
+  --vfx-bg-white: #1e1e20;
+  --vfx-link-visited: #b08cd9;
+  --vfx-link-active: #ffb347;
+  --vfx-external: #6b9aff;
+}
+
+/* ---- Global Styles ---- */
+body {
+  background: var(--ifm-background-color);
+  color: #000;
+  font-size: 14px;
+}
+
+[data-theme='dark'] body {
+  color: #e3e3e3;
+}
+
+a {
+  color: var(--ifm-link-color);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:visited {
+  color: var(--vfx-link-visited);
+}
+a:active {
+  color: var(--vfx-link-active);
+}
+
+/* ---- Headings ---- */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ifm-heading-color);
+  font-weight: var(--ifm-heading-font-weight);
+  border-bottom: 1px solid var(--vfx-border);
+  padding-bottom: 0.17em;
+  margin-top: 0;
+}
+h1 { font-size: 188%; }
+h2 { font-size: 150%; }
+h3, h4, h5, h6 {
+  border-bottom: none;
+  font-weight: bold;
+}
+h3 { font-size: 132%; }
+h4 { font-size: 116%; }
+h5 { font-size: 100%; }
+h6 { font-size: 80%; }
+
+/* ---- Navbar ---- */
+.navbar {
+  border-bottom: 1px solid var(--vfx-border);
+  box-shadow: none;
+}
+.navbar__link {
+  color: var(--ifm-link-color);
+  font-size: 95%;
+}
+.navbar__link:hover {
+  text-decoration: underline;
+  color: var(--ifm-link-color);
+}
+.navbar__link--active {
+  font-weight: bold;
+}
+
+/* ---- Sidebar (DocSidebar) ---- */
+.menu {
+  font-size: 95%;
+  padding: 0.5em 0.8em 0.3em 0.5em;
+}
+.menu__link {
+  color: var(--ifm-menu-color);
+  line-height: 1.5em;
+}
+.menu__link:hover {
+  text-decoration: underline;
+  color: var(--ifm-menu-color);
+}
+.menu__link--active {
+  font-weight: bold;
+  color: var(--ifm-menu-color);
+}
+.menu__list-item {
+  margin-bottom: 0.1em;
+}
+
+/* ---- Table of Contents (right sidebar) ---- */
+.table-of-contents {
+  font-size: 95%;
+  border-left: 1px solid var(--ifm-toc-border-color);
+}
+.table-of-contents__link {
+  color: var(--ifm-link-color);
+}
+.table-of-contents__link:hover {
+  text-decoration: underline;
+}
+.table-of-contents__link--active {
+  font-weight: bold;
+}
+
+/* ---- Main Content Area ---- */
+.theme-doc-markdown {
+  line-height: 1.5em;
+}
+.theme-doc-markdown p {
+  margin: 0.4em 0 0.5em 0;
+  line-height: 1.5em;
+}
+.theme-doc-markdown ul {
+  line-height: 1.5em;
+  list-style-type: square;
+  margin: 0.3em 0 0 1.5em;
+  padding: 0;
+}
+.theme-doc-markdown ol {
+  line-height: 1.5em;
+  margin: 0.3em 0 0 3.2em;
+}
+.theme-doc-markdown li {
+  margin-bottom: 0.1em;
+}
+.theme-doc-markdown dt {
+  font-weight: bold;
+  margin-bottom: 0.1em;
+}
+.theme-doc-markdown dl {
+  margin-top: 0.2em;
+  margin-bottom: 0.5em;
+}
+.theme-doc-markdown dd {
+  line-height: 1.5em;
+  margin-left: 2em;
+  margin-bottom: 0.1em;
+}
+
+/* ---- Tables ---- */
+table {
+  font-size: 100%;
+  color: #000;
+  background-color: var(--vfx-bg-white);
+}
+[data-theme='dark'] table {
+  color: #e3e3e3;
+}
+
+/* ---- Code Blocks ---- */
+code {
+  background-color: var(--vfx-bg-light);
+}
+pre {
+  padding: 1em;
+  border: 1px dashed #2f6fab;
+  color: #000;
+  background-color: var(--vfx-bg-light);
+  line-height: 1.3em;
+  border-radius: 0;
+}
+[data-theme='dark'] pre {
+  color: #e3e3e3;
+  border-color: #2f6fab;
+}
+
+/* ---- Footer ---- */
+.footer {
+  background-color: var(--ifm-footer-background-color);
+  border-top: 1px solid var(--vfx-accent);
+  border-bottom: 1px solid var(--vfx-accent);
+  font-size: 90%;
+  text-align: center;
+  padding: 0.4em 0 1.2em 0;
+  margin: 0.6em 0 1em 0;
+}
+.footer__links {
+  margin-bottom: 0;
+}
+.footer__col {
+  text-align: center;
+}
+.footer__item {
+  display: inline;
+  margin: 0 1.3em;
+}
+.footer__link-item {
+  color: var(--ifm-link-color);
+}
+.footer__link-item:hover {
+  text-decoration: underline;
+}
+
+/* ---- Admonitions (Infobox replacements) ---- */
+.admonition {
+  border: 1px solid var(--vfx-border);
+  background-color: var(--vfx-bg-light);
+  font-size: 95%;
+  box-shadow: none;
+}
+.admonition-heading h5 {
+  border-bottom: none;
+  font-weight: bold;
+}
+
+/* ---- Category / Tag Index Links ---- */
+.doc_index {
+  background-color: rgb(175, 180, 184);
+  border: 1px solid #000;
+  padding: 0;
+  text-align: center;
+  margin: 1em 0;
+}
+.doc_index ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.doc_index li {
+  display: inline;
+  padding: 2px;
+  font-size: 90%;
+}
+.doc_index a {
+  background-color: rgb(175, 180, 184);
+  padding: 4px 4px;
+  border-radius: 2px;
+  text-decoration: none;
+  line-height: 2;
+  color: var(--ifm-link-color);
+}
+.doc_index a:hover {
+  background-color: rgb(220, 221, 236);
+  text-decoration: none;
+}
+[data-theme='dark'] .doc_index {
+  background-color: #3a3a3d;
+  border-color: #666;
+}
+[data-theme='dark'] .doc_index a {
+  background-color: #3a3a3d;
+  color: var(--ifm-link-color);
+}
+[data-theme='dark'] .doc_index a:hover {
+  background-color: #555;
+}
+
+/* ---- Doc Header (yellow title box) ---- */
+.doc_header {
+  background-color: rgb(255, 199, 38);
+  border: 1px solid #000;
+  padding: 5px;
+  margin-bottom: 1em;
+}
+[data-theme='dark'] .doc_header {
+  background-color: #8a6a10;
+  border-color: #666;
+}
+
+/* ---- Doc Title ---- */
+.doc_title {
+  color: #000;
+  font-weight: normal;
+  font-size: 188%;
+  padding: 0;
+  margin: 0;
+  border-bottom: none;
+}
+
+/* ---- Doc Note (blue info box) ---- */
+.doc_note {
+  background: rgb(95%, 95%, 100%);
+  border: 1px solid var(--vfx-border);
+  padding: 0.5em 1em 0.5em 35px;
+  margin: 1em;
+  position: relative;
+  min-height: 2em;
+}
+.doc_note::before {
+  content: "\2139\FE0F";
+  position: absolute;
+  left: 10px;
+  top: 0.5em;
+  font-size: 1.2em;
+}
+[data-theme='dark'] .doc_note {
+  background: rgb(20%, 25%, 40%);
+}
+
+/* ---- Doc Warn (yellow warning box) ---- */
+.doc_warn {
+  background: rgb(100%, 100%, 90%);
+  border: 1px solid var(--vfx-border);
+  padding: 0.5em 1em 0.5em 35px;
+  margin: 1em;
+  position: relative;
+  min-height: 2em;
+}
+.doc_warn::before {
+  content: "\26A0\FE0F";
+  position: absolute;
+  left: 10px;
+  top: 0.5em;
+  font-size: 1.2em;
+}
+[data-theme='dark'] .doc_warn {
+  background: rgb(40%, 35%, 10%);
+}
+
+/* ---- Inline Doc Styles ---- */
+.doc_menu {
+  font-style: italic;
+  display: inline;
+}
+.doc_context {
+  font-style: italic;
+  display: inline;
+}
+.doc_key {
+  font-weight: bold;
+  display: inline;
+}
+.doc_tool {
+  font-variant: small-caps;
+  text-transform: lowercase;
+  display: inline;
+}
+.doc_control {
+  font-variant: small-caps;
+  text-transform: uppercase;
+  display: inline;
+}
+.doc_pref {
+  font-style: italic;
+  display: inline;
+}
+.doc_path {
+  display: inline;
+  font-family: courier, serif;
+}
+
+/* ---- Main Page Specific ---- */
+.popcorn-mainpage {
+  max-width: 75%;
+  margin: 0 auto;
+}
+.popcorn-mainpage h3 {
+  border-bottom: none;
+  font-weight: bold;
+  font-size: 132%;
+  margin-bottom: 0.3em;
+}
+.popcorn-mainpage .category-section {
+  vertical-align: top;
+  padding: 0 1em;
+}
+.popcorn-mainpage .category-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.popcorn-mainpage .category-section li {
+  margin-bottom: 0.1em;
+}
+.popcorn-mainpage .category-section a {
+  color: var(--ifm-link-color);
+  text-decoration: none;
+}
+.popcorn-mainpage .category-section a:hover {
+  text-decoration: underline;
+}
+.popcorn-mainpage .section-heading-img {
+  display: block;
+  margin-bottom: 0.5em;
+}
+.popcorn-mainpage .main-banner-img {
+  display: block;
+  margin: 1em auto;
+  max-width: 100%;
+}
+
+/* ---- Print Styles ---- */
+@media print {
+  .navbar, .menu, .table-of-contents, .footer {
+    display: none;
+  }
+}
