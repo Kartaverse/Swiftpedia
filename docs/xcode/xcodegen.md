@@ -55,6 +55,16 @@ CODE_SIGN_INJECT_BASE_ENTITLEMENTS: NO
 CODE_SIGN_TIMESTAMP: timestamp.apple.com:ts1
 ```
 
+## Ouput Folder
+
+xcodegen is able to define where the compiled application is saved when the code is built. If you wish, you can save the output to the same project location where the project.yml file is located for convenience.
+
+This is controlled with the setting:
+
+```yaml
+CONFIGURATION_BUILD_DIR: "$(PROJECT_DIR)"
+```
+
 ## Compiling the Xcode Project
 
 Once your .xcodeproj file has been created/refreshed you can either build it directly from the command line:
