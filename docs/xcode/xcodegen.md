@@ -27,9 +27,32 @@ xcodegen generate
 
 or you can specify the specific project filename to use:
 
-
 ```bash
 xcodegen generate --spec project.yml
+```
+
+## Finding your Apple Development ID
+
+When you switch your automatic code signing workflows from using the Xcode GUI over to xcodegen, you need to look up the active developer IDs that are present on your system.
+
+This command lists the "Apple Distribution" and "Apple Development" certificates:
+
+```bash
+security find-identity -v -p codesigning | head -3
+```
+
+This information gets added to the project.yml file in the "settings base" section:
+
+```yaml
+ENABLE_HARDENED_RUNTIME: YES
+CODE_SIGN_STYLE: Automatic
+CODE_SIGN_IDENTITY: Apple Development
+DEVELOPMENT_TEAM: 000AAAAAA0
+CODE_SIGNING_REQUIRED: YES
+CODE_SIGNING_ALLOWED: YES
+AD_HOC_CODE_SIGNING_ALLOWED: NO
+CODE_SIGN_INJECT_BASE_ENTITLEMENTS: NO
+CODE_SIGN_TIMESTAMP: timestamp.apple.com:ts1
 ```
 
 ## Compiling the Xcode Project
